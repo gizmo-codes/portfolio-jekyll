@@ -1,6 +1,6 @@
 services:
   jekyll:
-    image: jekyll/jekyll:3.8
+    image: jekyll/jekyll:latest
     #command: jekyll build --watch --force_polling --verbose --host 0.0.0.0
     #command: bundle add webrick
     command: jekyll serve --watch --livereload --host 0.0.0.0

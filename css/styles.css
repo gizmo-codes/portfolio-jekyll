@@ -220,7 +220,7 @@ footer {
     border: 3px solid white;
     border-radius: 30px;
     transition: .5s ease all;
-    background-color: rgb(0, 168, 109);;
+    background-color: rgb(0, 168, 109);
 }
 
 .btn-rounded-white:hover {
@@ -893,3 +893,72 @@ footer {
         padding: 5px 10px
     }
 }
+
+/* Dropdown Button */
+.dropbtn {
+    color: #fff;
+    padding: 15px 25px;
+    border: 3px solid white;
+    border-radius: 30px;
+    transition: .5s ease all;
+    background-color: rgb(0, 168, 109);
+    cursor: pointer;
+  }
+  
+  /* Dropdown button on hover & focus */
+  .dropbtn:hover, .dropbtn:focus {
+    color: white;
+    background: rgb(0, 168, 109);
+    text-decoration: none;
+    border-style: solid;
+    border-color: white;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    margin-top: 1px;
+    text-align: center;
+    display: none;
+    position: absolute;
+    border-radius: 10px;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content-center {
+    left: 50% !important;
+    right: auto !important;
+    text-align: center !important;
+    transform: translate(-50%, 0) !important;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    text-align: center;
+    background-color: rgb(0, 168, 109);
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-style: solid;
+    border-width: 2px;
+    border-color: white;
+    border-radius: 10px;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {
+    background-color: rgb(0, 224, 146);
+    border-radius: 10px;
+}
+  
+  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+  .show {display:block;}

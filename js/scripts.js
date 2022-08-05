@@ -1,14 +1,3 @@
-/*!
-    Title: Dev Portfolio Template
-    Version: 1.2.2
-    Last Change: 03/25/2020
-    Author: Ryan Fitzgerald
-    Repo: https://github.com/RyanFitzgerald/devportfolio-template
-    Issues: https://github.com/RyanFitzgerald/devportfolio-template/issues
-
-    Description: This file contains all the scripts associated with the single-page
-    portfolio website.
-*/
 
 (function($) {
 
@@ -117,4 +106,53 @@ function myFunction() {
         }
       }
     }
+  }
+
+
+// Contact Form
+$( document ).ready(function() {    
+        
+var $contactForm = $('#contact-form');
+$contactForm.submit(function(e) {
+    e.preventDefault();
+    $.ajax({
+        url: 'https://mailbear.omzig.dev/api/v1/form/10810dce-1074-4988-a8f5-4c538a749a95',
+        //url: 'http://192.168.1.186:4411/api/v1/form/10810dce-1074-4988-a8f5-4c538a749a95',
+        method: 'POST',
+        data: $(this).serialize(),
+        dataType: 'json',
+        beforeSend: function() {
+            $contactForm.find('.overlay div').html('<div class="alert alert--loading"><i class="fa fa-circle-o-notch fa-spin"></i> &nbsp; Sending message...</div>');
+            $contactForm.find('.overlay').fadeIn();
+        },
+        success: function(data) {
+            $contactForm.find('.alert--loading').hide();
+            $contactForm.find('.overlay div').html('<div class="alert alert--success"><i class="fa fa-check"></i> &nbsp; Your message was sent successfully!</div>');
+            $contactForm.find('.overlay').fadeIn();
+        },
+        error: function(err) {
+            $contactForm.find('.alert--loading').hide();
+            $contactForm.find('.overlay div').html('<div class="alert alert--error"><i class="fa fa-warning"></i> &nbsp; Oops, something went wrong :(<br>Please copy my Email in the bottom right instead!</div>');
+            $contactForm.find('.overlay').fadeIn();
+        }
+    });
+});
+$contactForm.find('.overlay').click(function(e) {
+    $(this).fadeOut(); 
+});                
+});
+
+
+// Function to copy my eMail to clipboard when mail icon is clicked.
+function copyEmail() {
+    var copyText = "mail@omzig.dev";
+    navigator.clipboard.writeText(copyText);
+    
+    var tooltip = document.getElementById("myTooltip");
+    tooltip.innerHTML = "Copied: " + copyText;
+  }
+  
+  function outFunc() {
+    var tooltip = document.getElementById("myTooltip");
+    tooltip.innerHTML = "Copy to clipboard";
   }

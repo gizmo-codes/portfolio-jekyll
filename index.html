@@ -192,6 +192,32 @@
     </div>
     <!-- End #skills -->
 
+    <form id="contact-form" class="pure-form">
+            
+        <div class="meta">
+            <input type="text" name="name" placeholder="Name">
+            
+            <input type="email" name="email" placeholder="Email">
+    
+            <input type="text" name="subject" placeholder="Subject">
+        </div><!-- .meta -->
+        
+        
+        <textarea name="content" placeholder="Your message" rows="7"></textarea>
+        
+        <button type="submit" class="">
+            <i class="fa fa-send-o"></i> Send
+        </button>
+    
+        
+        <div class="overlay">
+            <div> 
+            </div>
+        </div><!-- .overlay -->
+        
+        
+    </form>
+    
 
     <footer>
         <div class="container">
@@ -208,6 +234,11 @@
                 </div>
                 <div class="col-sm-5 social">
                     <ul>
+                        <div class="tooltip">
+                        <li>
+                            <a class="email"><i class="fa fa-envelope" onclick="copyEmail()" onmouseout="outFunc()"><span class="tooltiptext" id="myTooltip">Copy to clipboard</span></i></a>
+                        </li>
+                        </div>
                         <li>
                             <a href="https://github.com/gizmo-udel/" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
                         </li>

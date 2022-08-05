@@ -111,7 +111,6 @@ function myFunction() {
 
 // Contact Form
 $( document ).ready(function() {    
-        
 var $contactForm = $('#contact-form');
 $contactForm.submit(function(e) {
     e.preventDefault();
@@ -123,18 +122,18 @@ $contactForm.submit(function(e) {
         dataType: 'json',
         beforeSend: function(data) {
             console.log("Data: ",data)
-            $contactForm.find('.overlay div').html('<div class="alert alert--loading"><i class="fa fa-circle-o-notch fa-spin"></i> &nbsp; Sending message...</div>');
+            $contactForm.find('.overlay div').html('<div class="alert alert--loading" id=sending><i class="fa fa-circle-o-notch fa-spin"></i> &nbsp; Sending message...</div>');
             $contactForm.find('.overlay').fadeIn();
         },
         success: function(data) {
             $contactForm.find('.alert--loading').hide();
-            $contactForm.find('.overlay div').html('<div class="alert alert--success"><i class="fa fa-check"></i> &nbsp; Your message was sent successfully!</div>');
+            $contactForm.find('.overlay div').html('<div class="alert alert--success" id="success"><i class="fa fa-check"></i> &nbsp; Your message was sent successfully!</div>');
             $contactForm.find('.overlay').fadeIn();
         },
         error: function(err) {
             console.log("Error:",err)
             $contactForm.find('.alert--loading').hide();
-            $contactForm.find('.overlay div').html('<div class="alert alert--error"><i class="fa fa-warning"></i> &nbsp; Oops, something went wrong :(<br>Please copy my Email in the bottom right instead!</div>');
+            $contactForm.find('.overlay div').html('<div class="alert alert--error" id="error"><i class="fa fa-warning"></i> &nbsp; Oops, something went wrong :(<br>Please copy my email in the bottom right instead!</div>');
             $contactForm.find('.overlay').fadeIn();
         }
     });

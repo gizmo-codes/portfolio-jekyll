@@ -661,24 +661,24 @@ footer {
 
 #contact-form input::-webkit-input-placeholder,
 #contact-form textarea::-webkit-input-placeholder {
-    color: #fff
+    color: rgb(205, 205, 205);
 }
 
 #contact-form input:-moz-placeholder,
 #contact-form textarea:-moz-placeholder {
-    color: #fff;
+    color: rgb(205, 205, 205);
     opacity: 1
 }
 
 #contact-form input::-moz-placeholder,
 #contact-form textarea::-moz-placeholder {
-    color: #fff;
+    color: rgb(205, 205, 205);
     opacity: 1
 }
 
 #contact-form input:-ms-input-placeholder,
 #contact-form textarea:-ms-input-placeholder {
-    color: #fff
+    color: rgb(205, 205, 205);
 }
 
 #contact-form input:focus,
@@ -1009,4 +1009,41 @@ opacity: 1;
 
 .email{
     cursor: pointer;
+}
+
+.overlay{
+    padding-top: 10px;
+    text-align: center;
+    margin: auto;
+    width: 75%;
+}
+
+#success{
+    border-radius: 10px;
+    padding: 3px;
+    color:rgb(0, 168, 109);
+    background-color: white;
+    border-style: solid;
+    border-color: rgb(0, 168, 109);
+    border-width: 2px;
+}
+
+#error{
+    border-radius: 10px;
+    padding: 3px;
+    color: rgb(185, 0, 0);
+    background-color: white;
+    border-style: solid;
+    border-color: rgb(185, 0, 0);
+    border-width: 2px;
+}
+
+#sending{
+    border-radius: 10px;
+    padding: 3px;
+    color: rgb(81, 81, 81);
+    background-color: white;
+    border-style: solid;
+    border-color: rgb(81, 81, 81);
+    border-width: 2px;
 }

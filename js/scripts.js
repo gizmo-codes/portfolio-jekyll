@@ -121,7 +121,7 @@ $contactForm.submit(function(e) {
         method: 'POST',
         data: $(this).serialize(),
         dataType: 'json',
-        beforeSend: function() {
+        beforeSend: function(data) {
             console.log("Data: ",data)
             $contactForm.find('.overlay div').html('<div class="alert alert--loading"><i class="fa fa-circle-o-notch fa-spin"></i> &nbsp; Sending message...</div>');
             $contactForm.find('.overlay').fadeIn();

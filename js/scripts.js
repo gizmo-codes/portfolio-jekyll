@@ -111,18 +111,34 @@ function myFunction() {
 
 // Contact Form
 $( document ).ready(function() {    
-        
 var $contactForm = $('#contact-form');
 $contactForm.submit(function(e) {
     e.preventDefault();
+    
+    fullname = $("#name").val()
+    email = $("#email").val()
+    subject = $("#subject").val()
+    content = $("#content").val()
+    formid = "VK4vEhI56YdBPyV5IaDEg3vDCt5MEfvJ"
+    
+    jsondata = {
+        Name: fullname,
+        Email: email,
+        Subject: subject,
+        Content: content,
+        FormID: formid
+    }
+
+    console.log("test data",jsondata)
+    
     $.ajax({
         url: 'https://mailbear.omzig.dev/api/v1/form/VK4vEhI56YdBPyV5IaDEg3vDCt5MEfvJ',
         //url: 'http://192.168.1.186:4411/api/v1/form/10810dce-1074-4988-a8f5-4c538a749a95',
         method: 'POST',
-        data: $(this).serialize(),
+        //data: $(this).serialize(),
+        data: jsondata,
         dataType: 'json',
         beforeSend: function(data) {
-            console.log("Data: ",data)
             $contactForm.find('.overlay div').html('<div class="alert alert--loading"><i class="fa fa-circle-o-notch fa-spin"></i> &nbsp; Sending message...</div>');
             $contactForm.find('.overlay').fadeIn();
         },

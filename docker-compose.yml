@@ -1,9 +1,10 @@
 services:
   jekyll:
+    container_name: portfolio
     image: jekyll/jekyll:latest
     #command: jekyll build --watch --force_polling --verbose --host 0.0.0.0
     #command: bundle add webrick
-    command: jekyll serve --watch --ssl-cert --host 0.0.0.0
+    command: jekyll serve --disable-disk-cache --watch --ssl-cert --host 0.0.0.0
     ports:
       - 4000:4000
       - 35729:35729
